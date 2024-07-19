@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <div class="container text-center" style="margin: 30px">
+        <h3>Inventory System</h3>
+    </div>
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Item description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stock</th>
+            <th></th>
+          </tr>
+        </thead>
+         <tbody>
+          @for (product of products; track product.idProduct){
+            <tr>
+            <th scope="row">{{product.idProduct}}</th>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.stock}}</td>
+            <td class="text-center">
+              <div>
+                <button (click)="editProduct(product.idProduct)" class="btn btn-warning btn-sm me-3">Edit</button>
+                <button (click)="deleteProduct(product.idProduct)" class="btn btn-danger btn-sm ">Delete</button>
+              </div>
+            </td>
+          </tr> }      
+      </table>
+  </div>
